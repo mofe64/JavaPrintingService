@@ -100,8 +100,8 @@ public class PrintingService {
         fileInputStream = new FileInputStream(filePath);
         System.out.println(fileInputStream.toString());
         Doc document = new SimpleDoc(fileInputStream, flavor, null);
-        createPrintJob();
-        printJob = printServiceToUse.createPrintJob();
+        printJob = createPrintJob();
+//        printJob = printServiceToUse.createPrintJob();
         printJob.print(document, printRequestAttributeSet);
         fileInputStream.close();
     }
@@ -109,7 +109,6 @@ public class PrintingService {
     public void print() throws IOException, PrintException {
 
         FileChooserObj fileChooser = new FileChooserObj();
-//        System.out.println(fileChooser);
         fileChooser.setSize(400,400);
         fileChooser.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fileChooser.setVisible(true);
@@ -118,8 +117,8 @@ public class PrintingService {
         fileInputStream = new FileInputStream(path.toString());
         System.out.println(fileInputStream.toString());
         Doc document = new SimpleDoc(fileInputStream, flavor, null);
-        createPrintJob();
-        printJob = printServiceToUse.createPrintJob();
+        printJob = createPrintJob();
+//        printJob = printServiceToUse.createPrintJob();
         printJob.print(document, printRequestAttributeSet);
         fileInputStream.close();
     }
